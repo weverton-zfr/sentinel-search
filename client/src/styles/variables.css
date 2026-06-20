@@ -1,0 +1,142 @@
+:root {
+
+   /* =========================
+   PRIMARY COLORS
+   ========================= */
+
+   --primary: #8b5cf6;
+   --primary-hover: #9f75ff;
+   --primary-dark: #6d28d9;
+
+   --secondary: #22d3ee;
+   --secondary-hover: #4ae3ff;
+
+   /* =========================
+   BACKGROUNDS
+   ========================= */
+
+   --bg-main: #050816;
+   --bg-secondary: #0b1020;
+   --bg-sidebar: #070b18;
+   --bg-navbar: #090e1bf1;
+
+   --bg-card: #10172a;
+   --card-bg-hover: #161f38;
+
+   --input-bg: #111827;
+
+   --accent: #06b6d4;
+
+   /* =========================
+   BORDERS
+   ========================= */
+
+   --radius-xs: 0.25rem;  /* 4px */
+   --radius-sm: 0.375rem; /* 6px */
+   --radius-md: 0.75rem;  /* 12px */
+   --radius-lg: 1.125rem; /* 18px */
+   --radius-xl: 1.5rem;   /* 24px */
+   --radius-full: 9999px;
+
+   --border-color: #1f2937;
+   --border-hover: #374151;
+
+   /* =========================
+   TEXT
+   ========================= */
+
+   --text-primary: #f8fafc;
+   --text-secondary: #cbd5e1;
+   --text-muted: #94a3b8;
+
+   /* =========================
+   STATUS
+   ========================= */
+
+   --success: #22c55e;
+   --warning: #f59e0b;
+   --danger: #ef4444;
+   --info: #3b82f6;
+
+   /* =========================
+   SHADOWS
+   ========================= */
+
+   --shadow-primary:
+   0 0 20px rgba(139, 92, 246, 0.25);
+
+   --shadow-secondary:
+   0 0 20px rgba(34, 211, 238, 0.20);
+
+   --shadow-card:
+   0 10px 30px rgba(0, 0, 0, 0.35);
+
+   /* =========================
+   GRADIENTS
+   ========================= */
+
+   --gradient-primary:
+   linear-gradient(
+   135deg,
+   #6d28d9 0%,
+   #8b5cf6 50%,
+   #22d3ee 100%
+   );
+
+   --gradient-card:
+   linear-gradient(
+   180deg,
+   #10172a 0%,
+   #0b1020 100%
+   );
+
+   --gradient-hero:
+   radial-gradient(
+   circle at top,
+   rgba(139, 92, 246, 0.20),
+   transparent 50%
+   );
+
+   /* =========================
+   SIDEBAR
+   ========================= */
+
+   --sidebar-item: #94a3b8;
+   --sidebar-item-hover: #ffffff;
+   --sidebar-active-bg: rgba(139, 92, 246, 0.15);
+   --sidebar-active-border: #8b5cf6;
+
+   /* =========================
+   SEARCH
+   ========================= */
+
+   --search-bg: #111827;
+   --search-border: #1f2937;
+   --search-focus: #8b5cf6;
+
+   /* =========================
+   GLASS EFFECT
+   ========================= */
+
+   --glass-bg: rgba(16, 23, 42, 0.65);
+   --glass-border: rgba(255, 255, 255, 0.08);
+
+   /* =========================
+   SCROLLBAR
+   ========================= */
+
+   --scrollbar-bg: #0b1020;
+   --scrollbar-thumb: #8b5cf6;
+   --scrollbar-thumb-hover: #9f75ff;
+     /* TRANSITIONS */
+
+   --transition-fast: 0.15s ease;
+   --transition-normal: 0.25s ease;
+   --transition-slow: 0.35s ease;
+
+   /* ANIMATIONS */
+
+   --animation-fast: 150ms ease;
+   --animation-normal: 250ms ease;
+   --animation-slow: 350ms ease;
+}
