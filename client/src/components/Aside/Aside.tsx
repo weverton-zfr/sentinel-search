@@ -7,7 +7,8 @@ import {
   LuHistory,
   LuSettings,
   LuLogOut,
-  LuSparkles
+  LuSparkles,
+  LuCreditCard
 } from "react-icons/lu"
 
 const Aside = () => {
@@ -54,6 +55,16 @@ const Aside = () => {
           <span>Pesquisar</span>
         </NavLink>
 
+        <NavLink
+          to="/plans"
+          className={({ isActive }) =>
+            `${styles.navItem} ${isActive ? styles.active : ""}`
+          }
+        >
+          <LuCreditCard />
+          <span>Planos</span>
+        </NavLink>
+        
         <NavLink
           to="/history"
           className={({ isActive }) =>

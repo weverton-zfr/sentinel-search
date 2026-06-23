@@ -7,6 +7,7 @@ import Register from "../pages/public/Register/Register"
 import Search from "../pages/private/Search/Search"
 import History from "../pages/private/History/History"
 import Settings from "../pages/private/Settings/Settings"
+import Plans from "../pages/private/Plans/Plans"
 
 const AppRoutes = () => {
     return(
@@ -18,6 +19,7 @@ const AppRoutes = () => {
             <Route element={<AppLayout/>}>
                 <Route path="/" element={<Dashboard/>}/>
                 <Route path="search" element={<Search/>}/>
+                <Route path="/plans" element={<Plans />} />
                 <Route path="history" element={<History/>}/>
                 <Route path="settings" element={<Settings/>}/>
             </Route>

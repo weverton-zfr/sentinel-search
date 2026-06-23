@@ -6,10 +6,14 @@
   padding: 0;
 
   color: inherit;
+  font-family: var(--font-main);
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-primary);
 }
 
 body {
@@ -17,14 +21,7 @@ body {
 
   background-color: var(--bg-main);
   color: var(--text-primary);
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  font-family: var(--font-main);
 
   line-height: 1.5;
   font-size: 1.1rem;
@@ -43,10 +40,6 @@ canvas {
 
 svg {
   display: block;
-
-  color: inherit;
-  fill: currentColor;
-  stroke: currentColor;
 }
 
 input,
@@ -90,4 +83,41 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  border-radius: var(--radius-full);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary)
+  );
+  border-radius: var(--radius-full);
+  border: 2px solid var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--primary-hover),
+    var(--secondary-hover)
+  );
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--scrollbar-bg);
 }
