@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import type { RegisterDTO } from "./auth.dto.js";
-import { registerService } from "./auth.service.js";
+import type { LoginDTO, RegisterDTO } from "./auth.dto.js";
+import { loginService, registerService } from "./auth.service.js";
 
 export const registerController = async (req: Request, res: Response) => {
     const { name, email, password } = req.body
@@ -20,8 +20,40 @@ export const registerController = async (req: Request, res: Response) => {
             message: "Erro ao criar usuario"
         })
     }
-    return res.status(201).json({
-        message: "Usuario criado com sucesso",
+    return res.json({
         registerResult
     })
+}
+
+export const loginController = async (req: Request, res: Response) => {
+    const { email, password } = req.body
+
+    if(
+    !email || 
+    !password || 
+    typeof email !== "string" ||
+    typeof password !== "string" || 
+    !email.trim() || 
+    !password.trim())
+    {
+        return res.status(400).json({
+            message: "Preencha todos os campos!"
+        })
+    }
+
+    const user: LoginDTO = {
+        email,
+        password
+    }
+
+    const loginResult = await loginService(user)
+    if(!loginResult){
+        return res.status(401).json({
+            message: "Email ou senha inválidos"
+        })
+    }
+    return res.status(200).json({
+        message: "Login efetuado com sucesso",
+        loginResult
+    }) 
 }

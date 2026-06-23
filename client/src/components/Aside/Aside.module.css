@@ -1,0 +1,220 @@
+.aside {
+  width: 280px;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background:
+    var(--gradient-hero),
+    linear-gradient(180deg, var(--bg-sidebar), var(--bg-secondary));
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: sticky;
+  top: 0;
+  color: var(--text-primary);
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logoIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-primary);
+}
+
+.logoIcon svg {
+  font-size: 1.45rem;
+  color: var(--text-primary);
+}
+
+.logoArea h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.logoArea span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.navLabel {
+  margin-bottom: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.navItem {
+  position: relative;
+  height: 46px;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--sidebar-item);
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 600;
+  transition: var(--transition-normal);
+}
+
+.navItem svg {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.navItem:hover {
+  color: var(--sidebar-item-hover);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+
+.navItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 0;
+  border-radius: var(--radius-full);
+  background: var(--sidebar-active-border);
+  transition: var(--transition-normal);
+}
+
+.navItem:hover::before {
+  height: 18px;
+}
+
+.active {
+  color: var(--text-primary);
+  background: var(--sidebar-active-bg);
+  box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.18);
+}
+
+.active::before {
+  height: 24px;
+}
+
+.active svg {
+  color: var(--primary-hover);
+}
+
+.proCard {
+  margin-top: auto;
+  padding: 1rem;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(139, 92, 246, 0.16),
+      rgba(34, 211, 238, 0.06)
+    ),
+    var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-card);
+}
+
+.proIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  background: rgba(139, 92, 246, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.proIcon svg {
+  color: var(--primary-hover);
+  font-size: 1.15rem;
+}
+
+.proCard h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.proCard p {
+  margin: 0.45rem 0 1rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.proCard button {
+  width: 100%;
+  height: 38px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-normal);
+}
+
+.proCard button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.logout {
+  width: 100%;
+  height: 46px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.logout svg {
+  font-size: 1.1rem;
+}
+
+.logout:hover {
+  color: var(--danger);
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+@media (max-width: 900px) {
+  .aside {
+    display: none;
+  }
+}

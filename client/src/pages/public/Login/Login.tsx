@@ -1,6 +1,27 @@
+import React, { type SubmitEventHandler } from "react";
 import styles from "./Login.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const [email, setEmail] = React.useState<string | null>("")
+  const [password, setPassword] = React.useState<string | null>("")
+  const navigate = useNavigate()
+
+  const handleSubmit : SubmitEventHandler<HTMLFormElement> = async (event) =>{
+    event.preventDefault()
+    try{
+       const dataLogin = await axios.post("http://localhost:3333/login",{
+        email,
+        password
+      })
+      localStorage.setItem("token", dataLogin.data.loginResult.token)
+      navigate("/")
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
   return (
     <>
       <div className={styles.header}>
@@ -13,10 +34,11 @@ const Login = () => {
         </p>
       </div>
 
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.field}>
           <label htmlFor="email">E-mail</label>
           <input
+            onChange={(e)=>setEmail(e.target.value)}
             id="email"
             type="email"
             placeholder="Digite seu e-mail"
@@ -30,6 +52,7 @@ const Login = () => {
           </div>
 
           <input
+            onChange={(e)=>setPassword(e.target.value)}
             id="password"
             type="password"
             placeholder="Digite sua senha"

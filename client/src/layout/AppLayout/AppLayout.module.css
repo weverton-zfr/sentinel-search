@@ -1,0 +1,7 @@
+.AppContainer{
+    display: flex;
+}
+
+.AppContent{
+    flex: 1;
+}
